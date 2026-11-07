@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1500px;height:1125px;overflow:hidden;font-family:'Public Sans',sans-serif;color:#14203A;background:var(--bg)}
+:root{--navy:#14203A;--muted:#5A6478;--line:#DFE3EA;--card:#fff;--pos:#1F7A4D;--neg:#B42318;--amb:#A1580B}
+.wrap{position:absolute;inset:0;padding:72px 80px;display:flex;flex-direction:column;gap:36px;justify-content:center}
+td,th{padding-top:16px!important;padding-bottom:16px!important}
+.eyebrow{font:600 20px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font:800 76px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;text-wrap:balance}
+h2{font:800 56px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;text-wrap:balance}
+.sub{font-size:28px;line-height:1.4;color:var(--muted);max-width:30ch}
+.card{background:var(--card);border-radius:22px;box-shadow:0 30px 60px -20px rgba(20,32,58,.28),0 0 0 1px rgba(20,32,58,.06);overflow:hidden}
+.bar{height:46px;background:#F3F5F9;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;padding:0 18px}
+.bar i{width:13px;height:13px;border-radius:50%;background:#D5DAE3;display:block}
+.bar span{margin-left:14px;font:600 16px 'IBM Plex Mono',monospace;color:var(--muted)}
+.tabs{display:flex;gap:4px;padding:0 18px;background:#F3F5F9;border-top:1px solid var(--line)}
+.tabs b{font:600 15px 'Public Sans';padding:10px 16px;color:var(--muted)} .tabs b.on{background:#fff;color:var(--navy);border:1px solid var(--line);border-top:none}
+.num{font-family:'IBM Plex Mono',monospace;font-weight:600;font-variant-numeric:tabular-nums}
+.chip{display:inline-block;padding:9px 16px;border-radius:999px;font:700 18px 'Public Sans';color:#fff;letter-spacing:.02em}
+.pos{background:var(--pos)} .neg{background:var(--neg)} .amb{background:var(--amb)}
+.check{display:flex;gap:16px;align-items:flex-start;font-size:27px;line-height:1.35}
+.check:before{content:"";flex:0 0 34px;height:34px;border-radius:50%;background:var(--acc) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/22px no-repeat;margin-top:2px}
+table{border-collapse:collapse;width:100%}
+td,th{padding:13px 20px;border-bottom:1px solid var(--line);font-size:21px;text-align:right}
+td:first-child,th:first-child{text-align:left}
+th{font:700 15px 'Public Sans';letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--navy)}
+tr.sec td{background:var(--soft);font:700 15px 'Public Sans';letter-spacing:.07em;text-transform:uppercase;color:var(--acc);padding:9px 20px}
+tr.key td{background:var(--soft);font-weight:700}
+.foot{position:absolute;left:80px;right:80px;bottom:48px;display:flex;gap:14px;align-items:center}
+.pill{border:2px solid rgba(20,32,58,.14);border-radius:999px;padding:10px 20px;font:600 19px 'Public Sans';background:rgba(255,255,255,.6)}
+.big{font:800 120px/1 'Bricolage Grotesque';letter-spacing:-.03em}
+</style><style>:root{--acc:#2446C7;--soft:#E6EBFB;--bg:#EEF1F8}</style></head><body>
+<div class='wrap' style='padding-bottom:140px;gap:30px'>
+  <div style='display:flex;flex-direction:column;gap:14px'><span class='eyebrow'>Lender view + investor view</span><h2>3 deals side by side. One verdict each.</h2></div>
+  <div class='card'><div class='bar'><i></i><i></i><i></i><span>Analyzer</span></div><table><tr><th></th><th>Property 1</th><th>Property 2</th><th>Property 3</th></tr><tr class=''><td class=''>Property</td><td class='num'>Maple St Duplex</td><td class='num'>Oak Ave House</td><td class='num'>Pine Ct Condo</td></tr><tr class=''><td class=''>Purchase price</td><td class='num'>$350,000</td><td class='num'>$280,000</td><td class='num'>$220,000</td></tr><tr class=''><td class=''>Monthly rent</td><td class='num'>$3,100</td><td class='num'>$2,500</td><td class='num'>$1,850</td></tr><tr class='sec'><td colspan='4'>Lender view</td></tr><tr class=''><td class=''>PITIA</td><td class='num'>$2,291</td><td class='num'>$1,991</td><td class='num'>$1,608</td></tr><tr class='key'><td class=''>Lender DSCR</td><td class='num'>1.35x</td><td class='num'>1.26x</td><td class='num'>1.15x</td></tr><tr class=''><td class=''>Max loan at target DSCR</td><td class='num'>$290,248</td><td class='num'>$225,253</td><td class='num'>$145,524</td></tr><tr class='sec'><td colspan='4'>Investor view</td></tr><tr class=''><td class=''>NOI / month</td><td class='num'>$1,915</td><td class='num'>$1,522</td><td class='num'>$919</td></tr><tr class='key'><td class=''>Cash flow / month</td><td class='num'>$124</td><td class='num'>-$44</td><td class='num'>-$164</td></tr><tr class=''><td class=''>Cash-on-cash</td><td class='num'>1.5%</td><td class='num'>-0.6%</td><td class='num'>-3.1%</td></tr><tr class='key'><td class=''>Verdict</td><td class='num'><span class='chip pos' style='font-size:15px'>STRONG</span></td><td class='num'><span class='chip amb' style='font-size:15px'>MIXED</span></td><td class='num'><span class='chip neg' style='font-size:15px'>WEAK</span></td></tr></table><div class='tabs'><b class='on'>Analyzer</b><b class=''>Sensitivity</b><b class=''>Lender Checklist</b></div></div>
+</div><div class='foot'><span class='pill'>Excel + Google Sheets</span><span class='pill'>Instant download</span><span class='pill'>No macros</span><span class='pill'>Example pre-filled</span></div></body></html>
