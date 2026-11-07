@@ -1,0 +1,289 @@
+<title>Portafolio de 5 negocios</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: hoja de análisis — resumen arriba, luego un one‑pager por negocio con ficha de números a la izquierda y detalle a la derecha */
+:root{
+  --bg:#f5f6f8; --paper:#ffffff; --ink:#14203a; --muted:#5a6478; --line:#dfe3ea;
+  --accent:#2446c7; --accent-soft:#e6ebfb; --pos:#1f7a4d; --pos-soft:#e3f2ea; --warn:#a1580b; --warn-soft:#fbefdf;
+  --f-display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1420; --paper:#171e2d; --ink:#e7ebf3; --muted:#9aa4b8; --line:#2a3346;
+  --accent:#7d97ff; --accent-soft:#1f2a4d; --pos:#5fcf96; --pos-soft:#15332a; --warn:#f0a85a; --warn-soft:#3a2a17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1420; --paper:#171e2d; --ink:#e7ebf3; --muted:#9aa4b8; --line:#2a3346;
+  --accent:#7d97ff; --accent-soft:#1f2a4d; --pos:#5fcf96; --pos-soft:#15332a; --warn:#f0a85a; --warn-soft:#3a2a17; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,5vw,44px);font-weight:700}
+h2{font-size:clamp(22px,3.4vw,30px);font-weight:700}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-family:var(--f-body)}
+p{margin:0}
+a{color:var(--accent)}
+.lede{color:var(--muted);max-width:68ch}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+nav.chips{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:10px;z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav.chips a{text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:13px}
+nav.chips a:hover,nav.chips a:focus-visible{border-color:var(--accent);outline:none}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:18px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.r,th.r{text-align:right}
+tfoot td{font-weight:600;border-bottom:none}
+.pill{display:inline-block;font:500 11px/1 var(--f-mono);padding:5px 8px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
+.p1{background:var(--pos-soft);color:var(--pos)} .p2{background:var(--accent-soft);color:var(--accent)} .p3{background:var(--warn-soft);color:var(--warn)}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:150px 1fr 110px;gap:12px;align-items:center;font-size:13px}
+.track{position:relative;height:14px;background:var(--bg);border-radius:4px;overflow:hidden}
+.track .base{position:absolute;inset:0 auto 0 0;background:var(--accent);opacity:.35}
+.track .cons{position:absolute;inset:0 auto 0 0;background:var(--accent)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.op{display:grid;grid-template-columns:280px 1fr;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;scroll-margin-top:64px}
+.op aside{background:var(--accent-soft);padding:24px;display:flex;flex-direction:column;gap:16px}
+.op aside .kv{display:flex;flex-direction:column;gap:2px}
+.op aside .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.op aside .v{font:500 18px/1.3 var(--f-mono);font-variant-numeric:tabular-nums}
+.op .main{padding:24px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.op .main .what{font-size:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+.grid2>div{display:flex;flex-direction:column;gap:8px;min-width:0}
+ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.fact{border-left:3px solid var(--accent);padding:10px 14px;background:var(--bg);border-radius:0 6px 6px 0;font-size:14px}
+.fact b{font-family:var(--f-mono);font-weight:500}
+.risk{font-size:14px;color:var(--muted)}
+.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.name{border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;background:var(--paper)}
+.name strong{font-family:var(--f-display);font-size:20px}
+.name.top{border-color:var(--accent)}
+.name small{color:var(--muted)}
+.src{font-size:13px;color:var(--muted)}
+.src ul{gap:2px}
+@media (max-width:760px){.op{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 84px}}
+@media (prefers-reduced-motion:no-preference){nav.chips a{transition:border-color .15s}}
+</style>
+
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:10px">
+  <span class="eyebrow">Business plan · noviembre 2026</span>
+  <h1>Portafolio de 5 negocios digitales de finanzas</h1>
+  <p class="lede">Una marca anónima y bilingüe. Yo construyo y opero cada negocio; vos creás las cuentas una sola vez y le dedicás unos 15 minutos por semana. Los números salen de research público con fuentes al final; donde las fuentes se contradicen, uso el valor más bajo.</p>
+</header>
+
+<nav class="chips" aria-label="Secciones">
+  <a href="#resumen">Resumen</a><a href="#tienda">1 · Tienda</a><a href="#bot">2 · Bot</a><a href="#calculadoras">3 · Calculadoras</a><a href="#newsletter">4 · Newsletter</a><a href="#kdp">5 · eBooks</a><a href="#facturacion">Facturación</a><a href="#marca">Marca</a>
+</nav>
+
+<section class="panel" id="resumen">
+  <h2>Resumen</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Negocio</th><th>Cómo gana plata</th><th class="r">Mes 12 conservador</th><th class="r">Mes 12 base</th><th class="r">Inversión</th><th>Prioridad</th></tr></thead>
+    <tbody>
+      <tr><td>Tienda de plantillas</td><td>Venta en Etsy y Gumroad</td><td class="r num">USD 250</td><td class="r num">USD 1.300</td><td class="r num">~USD 30</td><td><span class="pill p1">Semana 1</span></td></tr>
+      <tr><td>Bot de alertas</td><td>Suscripción premium</td><td class="r num">USD 120</td><td class="r num">USD 450</td><td class="r num">USD 0</td><td><span class="pill p1">Semana 1</span></td></tr>
+      <tr><td>Calculadoras de nicho</td><td>Afiliados + anuncios</td><td class="r num">USD 50</td><td class="r num">USD 500</td><td class="r num">USD 12</td><td><span class="pill p2">Semana 2</span></td></tr>
+      <tr><td>Newsletter</td><td>Sponsors + afiliados + membresía</td><td class="r num">USD 50</td><td class="r num">USD 350</td><td class="r num">USD 9/mes</td><td><span class="pill p2">Semana 3</span></td></tr>
+      <tr><td>eBooks en KDP</td><td>Regalías de Amazon</td><td class="r num">USD 50</td><td class="r num">USD 300</td><td class="r num">USD 0</td><td><span class="pill p3">Mes 2</span></td></tr>
+    </tbody>
+    <tfoot><tr><td>Total</td><td></td><td class="r num">~USD 520/mes</td><td class="r num">~USD 2.900/mes</td><td class="r num">~USD 200/año</td><td></td></tr></tfoot>
+  </table></div>
+  <div class="bars" role="img" aria-label="Ingreso mensual proyectado al mes 12 por negocio, conservador y base">
+    <div class="legend"><span><i style="background:var(--accent)"></i>Conservador</span><span><i style="background:var(--accent);opacity:.35"></i>Base</span></div>
+    <div class="bar"><span>Tienda</span><div class="track"><span class="base" style="width:100%"></span><span class="cons" style="width:19.2%"></span></div><span class="num">250 · 1.300</span></div>
+    <div class="bar"><span>Calculadoras</span><div class="track"><span class="base" style="width:38.5%"></span><span class="cons" style="width:3.8%"></span></div><span class="num">50 · 500</span></div>
+    <div class="bar"><span>Bot</span><div class="track"><span class="base" style="width:34.6%"></span><span class="cons" style="width:9.2%"></span></div><span class="num">120 · 450</span></div>
+    <div class="bar"><span>Newsletter</span><div class="track"><span class="base" style="width:26.9%"></span><span class="cons" style="width:3.8%"></span></div><span class="num">50 · 350</span></div>
+    <div class="bar"><span>eBooks</span><div class="track"><span class="base" style="width:23.1%"></span><span class="cons" style="width:3.8%"></span></div><span class="num">50 · 300</span></div>
+  </div>
+  <p>Ninguno llega solo a USD 2.000/mes en 12 meses. Juntos sí, en el escenario base, porque se alimentan entre sí: las calculadoras y el bot traen gente, la newsletter la retiene y la tienda y los libros venden.</p>
+</section>
+
+<!-- 1 TIENDA -->
+<article class="op" id="tienda">
+  <aside>
+    <span class="eyebrow">One pager 1</span>
+    <h2>Tienda de plantillas financieras</h2>
+    <div class="kv"><span class="k">Mes 12</span><span class="v">USD 250 – 1.300</span></div>
+    <div class="kv"><span class="k">Inversión</span><span class="v">~USD 30</span></div>
+    <div class="kv"><span class="k">Tu tiempo</span><span class="v">5 min por producto</span></div>
+    <div class="kv"><span class="k">Arranca</span><span class="v">Semana 1</span></div>
+    <span class="pill p1">Prioridad 1</span>
+  </aside>
+  <div class="main">
+    <p class="what">Plantillas profesionales de Excel y Google Sheets, en inglés y español. Análisis de propiedades en alquiler, DSCR, BRRRR, presupuesto de obra, reparto de ganancias entre socios (waterfall), memo de crédito, cartera en pesos y dólares, presupuesto con inflación. Suma kits de prompts de IA para analistas.</p>
+    <div class="fact">Las plantillas de Excel son uno de los nichos digitales con demanda real en Etsy. Pero la mayoría de los vendedores de Etsy gana <b>USD 0–100/mes</b>. Lo que marca la diferencia es tener muchos productos en un nicho profesional, no plantillas genéricas.</div>
+    <div class="grid2">
+      <div><h3>Cliente</h3><ul><li>Inversor inmobiliario de EE. UU. (paga USD 19–79)</li><li>Analista junior de crédito o real estate</li><li>Argentino que quiere ordenar sus finanzas</li></ul></div>
+      <div><h3>Cómo gana plata</h3><ul><li>Etsy: USD 9–39 por plantilla</li><li>Gumroad: USD 19–79; bundles de USD 99–149</li><li>Desde el mes 9: licencias para empresas, USD 300–1.000</li></ul></div>
+      <div><h3>Cómo se cobra</h3><ul><li>Etsy le cobra al comprador y te paga por <b>Payoneer</b> (es obligatorio para residentes argentinos)</li><li>Gumroad: transferencia a banco o PayPal (2 %)</li><li>Comisiones: Etsy ~USD 0,20 por publicación + ~6,5 % + procesamiento; Gumroad 10 % + USD 0,50</li></ul></div>
+      <div><h3>Cómo conseguimos clientes</h3><ul><li>SEO de Etsy: título, 13 etiquetas y atributos</li><li>Pinterest: pins automáticos por API</li><li>Botón "versión pro" en cada calculadora</li><li>Plantilla gratis a cambio del email</li></ul></div>
+    </div>
+    <div class="grid2">
+      <div><h3>Lo hago yo</h3><p>1 producto por semana: el archivo, las instrucciones, 5 imágenes de presentación y los textos en los dos idiomas.</p></div>
+      <div><h3>Proyección (base)</h3><p class="num">40 productos · 10 venden · 6 ventas/mes × USD 15 + 15 ventas en Gumroad × USD 40 ≈ USD 1.300 neto</p></div>
+    </div>
+    <p class="risk"><b>Riesgos:</b> saturación de plantillas genéricas, reglas de Etsy sobre productos hechos con IA y copias.</p>
+  </div>
+</article>
+
+<!-- 2 BOT -->
+<article class="op" id="bot">
+  <aside>
+    <span class="eyebrow">One pager 2</span>
+    <h2>Bot de alertas de mercado</h2>
+    <div class="kv"><span class="k">Mes 12</span><span class="v">USD 120 – 450</span></div>
+    <div class="kv"><span class="k">Inversión</span><span class="v">USD 0</span></div>
+    <div class="kv"><span class="k">Tu tiempo</span><span class="v">2 min una vez</span></div>
+    <div class="kv"><span class="k">Arranca</span><span class="v">Semana 1</span></div>
+    <span class="pill p1">Prioridad 2</span>
+  </aside>
+  <div class="main">
+    <p class="what">Un bot de Telegram para inversores argentinos. Gratis: un resumen diario de dólares, tasas de plazo fijo y caución y riesgo país. Premium: alertas a medida, como "avisame si el MEP pasa $X" o "si la ON YYY rinde más de 9 %", más el ranking diario de plazos fijos, las licitaciones del Tesoro y los datos de inflación apenas salen.</p>
+    <div class="fact">Las alertas de dólar ya las dan gratis otras apps y el bot de Ámbito. Desde que se levantó el cepo en 2025, la brecha casi desapareció y ganaron peso el <b>MEP y el CCL</b>. Lo que se puede cobrar son las alertas de bonos, ONs y tasas, que casi nadie personaliza.</div>
+    <div class="grid2">
+      <div><h3>Cliente</h3><ul><li>Ahorrista o inversor que ya opera con un broker</li><li>Quiere saber cuándo entrar o salir sin mirar pantallas todo el día</li></ul></div>
+      <div><h3>Cómo gana plata</h3><ul><li>Premium a USD 4–6 por mes, o anual con descuento</li><li>Referidos: compartí el bot y ganás 1 mes gratis</li></ul></div>
+      <div><h3>Cómo se cobra</h3><ul><li><b>Membresía en Gumroad</b> que habilita el premium en el bot</li><li>Telegram Stars como opción secundaria: rinden ~USD 0,013 por Star, retienen el pago hasta 21 días y se retiran vía TON y un exchange</li></ul></div>
+      <div><h3>Cómo conseguimos usuarios</h3><ul><li>Directorios de bots de Telegram</li><li>Enlaces desde las calculadoras y la newsletter</li><li>Búsquedas como "alerta dólar MEP" o "plazo fijo hoy"</li></ul></div>
+    </div>
+    <div class="grid2">
+      <div><h3>Lo hago yo</h3><p>El bot completo, conectado a datos públicos (DolarApi.com y fuentes oficiales), corriendo gratis en Cloudflare Workers o GitHub Actions. También lo mantengo.</p></div>
+      <div><h3>Proyección (base)</h3><p class="num">3.000 usuarios gratis × 3 % premium × USD 5 = USD 450/mes</p></div>
+    </div>
+    <p class="risk"><b>Riesgos:</b> es información, no recomendación. Asesorar sobre inversiones requiere estar registrado en la CNV, así que el bot nunca dice "comprá" y lleva aviso legal. Otro riesgo es que la fuente de datos se caiga; por eso se usan dos fuentes.</p>
+  </div>
+</article>
+
+<!-- 3 CALCULADORAS -->
+<article class="op" id="calculadoras">
+  <aside>
+    <span class="eyebrow">One pager 3</span>
+    <h2>Calculadoras de nicho para inversores</h2>
+    <div class="kv"><span class="k">Mes 12</span><span class="v">USD 50 – 500</span></div>
+    <div class="kv"><span class="k">Inversión</span><span class="v">USD 12 (dominio)</span></div>
+    <div class="kv"><span class="k">Tu tiempo</span><span class="v">20 min una vez</span></div>
+    <div class="kv"><span class="k">Arranca</span><span class="v">Semana 2</span></div>
+    <span class="pill p2">Lento pero acumula</span>
+  </aside>
+  <div class="main">
+    <p class="what">Un sitio con herramientas especializadas. En inglés, para inversores inmobiliarios de EE. UU.: DSCR, cap rate, cash‑on‑cash, BRRRR, desembolsos de un préstamo de construcción y reparto de ganancias entre socios. En español, para inversores argentinos: rendimiento (TIR) de ONs y bonos, caución vs. plazo fijo vs. FCI, MEP vs. CCL y CEDEARs.</p>
+    <div class="fact">En calculadoras generales para Argentina, <b>hacecuentas.com</b> ya tiene más de 1.400, así que no conviene competir ahí. En el nicho inmobiliario de EE. UU., "debt service coverage ratio" tiene <b>~27.100 búsquedas/mes</b> y "dscr loan" <b>~49.500</b>, con avisos de USD 6–14 por clic.</div>
+    <div class="grid2">
+      <div><h3>Cliente</h3><ul><li>Inversor inmobiliario de EE. UU.</li><li>Inversor argentino de nivel medio</li></ul></div>
+      <div><h3>Cómo gana plata</h3><ul><li>DealCheck: <b>30 % recurrente</b> por cada referido</li><li>Stessa: USD 20–120 por referido (según la fuente)</li><li>Interactive Brokers: USD 200 por referido con depósito ≥ USD 10.000</li><li>Anuncios: USD 8–50 por cada 1.000 visitas de EE. UU.; Latinoamérica paga entre la cuarta parte y la mitad</li></ul></div>
+      <div><h3>Cómo se cobra</h3><ul><li>AdSense y los programas de afiliados pagan a tu cuenta</li><li>Vos les facturás con Factura E</li></ul></div>
+      <div><h3>Cómo conseguimos usuarios</h3><ul><li>SEO: cada herramienta con su artículo y preguntas frecuentes</li><li>Pins automáticos en Pinterest</li><li>Enlaces desde el bot y la newsletter</li><li>Sin publicidad paga</li></ul></div>
+    </div>
+    <div class="grid2">
+      <div><h3>Lo hago yo</h3><p>Lanzo con 10 herramientas y sumo 2–3 por semana con la tarea programada. El sitio es estático y se aloja gratis.</p></div>
+      <div><h3>Proyección (base)</h3><p class="num">30.000 visitas/mes (la mitad en inglés) → anuncios ~USD 200 + afiliados ~USD 300</p></div>
+    </div>
+    <p class="risk"><b>Riesgos:</b> Google tarda 4–8 meses en traer tráfico y penaliza el contenido de IA de relleno. Por eso el valor tienen que ser las herramientas en sí.</p>
+  </div>
+</article>
+
+<!-- 4 NEWSLETTER -->
+<article class="op" id="newsletter">
+  <aside>
+    <span class="eyebrow">One pager 4</span>
+    <h2>Newsletter semanal</h2>
+    <div class="kv"><span class="k">Mes 12</span><span class="v">USD 50 – 350</span></div>
+    <div class="kv"><span class="k">Inversión</span><span class="v">USD 9/mes</span></div>
+    <div class="kv"><span class="k">Tu tiempo</span><span class="v">2 min/semana al principio</span></div>
+    <div class="kv"><span class="k">Arranca</span><span class="v">Semana 3</span></div>
+    <span class="pill p2">Canal de venta</span>
+  </aside>
+  <div class="main">
+    <p class="what">"Lo que importa de tu plata esta semana": tasas, MEP y CCL, bonos y ONs destacados, una herramienta del sitio y una plantilla. Arranca en español; en el mes 4 se suma una edición en inglés sobre real estate. La tarea programada la escribe y la envía sola.</p>
+    <div class="fact">Los sponsors de newsletters de finanzas pagan <b>USD 25–180 por cada 1.000 lectores</b>, y muchas veces se cuentan solo los emails abiertos. Con 2.000 suscriptores eso es poco, así que su valor principal es empujar las ventas de la tienda y del bot.</div>
+    <div class="grid2">
+      <div><h3>Cliente</h3><ul><li>Quien entra a las calculadoras</li><li>Los usuarios del bot</li><li>Los compradores de la tienda</li></ul></div>
+      <div><h3>Cómo gana plata</h3><ul><li>Sponsors desde ~1.500 suscriptores</li><li>Afiliados (brokers, billeteras, software)</li><li>Resumen premium a USD 5/mes</li></ul></div>
+      <div><h3>Cómo se cobra</h3><ul><li>Sponsors: Factura E (exterior) o C (Argentina)</li><li>Premium: membresía en Gumroad, porque Buttondown cobra por Stripe y Stripe no está disponible para personas en Argentina</li></ul></div>
+      <div><h3>Cómo conseguimos suscriptores</h3><ul><li>Formulario en cada calculadora</li><li>Plantilla gratis a cambio del email</li><li>Invitación desde el bot y en cada compra</li></ul></div>
+    </div>
+    <div class="grid2">
+      <div><h3>Plataforma</h3><p>Buttondown Basic: tiene una API completa para enviar automáticamente y no cobra comisión sobre lo que facturás.</p></div>
+      <div><h3>Proyección (base)</h3><p class="num">Sponsors ~USD 90 + afiliados ~USD 150 + premium ~USD 200 (40 × USD 5) − comisión de Gumroad</p></div>
+    </div>
+    <p class="risk"><b>Riesgos:</b> que crezca lento y que los emails caigan en spam. Se cubre con suscripción confirmada y limpiando la lista seguido.</p>
+  </div>
+</article>
+
+<!-- 5 KDP -->
+<article class="op" id="kdp">
+  <aside>
+    <span class="eyebrow">One pager 5</span>
+    <h2>eBooks en Amazon KDP</h2>
+    <div class="kv"><span class="k">Mes 12</span><span class="v">USD 50 – 300</span></div>
+    <div class="kv"><span class="k">Inversión</span><span class="v">USD 0</span></div>
+    <div class="kv"><span class="k">Tu tiempo</span><span class="v">10 min por libro</span></div>
+    <div class="kv"><span class="k">Arranca</span><span class="v">Mes 2</span></div>
+    <span class="pill p3">El más incierto</span>
+  </aside>
+  <div class="main">
+    <p class="what">Guías de 60–120 páginas, en ebook y papel, en español e inglés: invertir en ONs paso a paso, finanzas personales con inflación, Real Estate Underwriting for Beginners, DSCR Loans Explained, AI for Financial Analysts. Cada libro manda a la tienda.</p>
+    <div class="fact">Amazon paga <b>70 % de regalías</b> con precios de USD 2,99 a 9,99 y 35 % fuera de ese rango. Permite subir hasta <b>3 títulos por día</b> y exige declarar el texto generado con IA, o puede bajar el libro.</div>
+    <div class="grid2">
+      <div><h3>Cliente</h3><ul><li>Gente que busca una guía puntual en Amazon. Amazon trae el tráfico.</li></ul></div>
+      <div><h3>Cómo gana plata</h3><ul><li>Ebook a USD 4,99 (~USD 3,40 de regalía)</li><li>Papel a USD 12,99</li><li>Páginas leídas en Kindle Unlimited</li></ul></div>
+      <div><h3>Cómo se cobra</h3><ul><li>Amazon paga las regalías a tu cuenta. Hay que confirmar el método para Argentina; con tu cuenta del exterior se resuelve.</li></ul></div>
+      <div><h3>Cómo conseguimos lectores</h3><ul><li>SEO de Amazon: 7 palabras clave y 2–3 categorías</li><li>Promoción gratuita de 5 días (KDP Select)</li><li>Amazon Ads solo cuando un libro ya vende</li></ul></div>
+    </div>
+    <div class="grid2">
+      <div><h3>Lo hago yo</h3><p>Escribo, maqueto (EPUB y PDF para papel), armo la tapa tipográfica y escribo la ficha. Vos lo subís en 10 minutos.</p></div>
+      <div><h3>Proyección (base)</h3><p class="num">12 libros × ~8 ventas/mes × ~USD 3 = ~USD 300/mes</p></div>
+    </div>
+    <p class="risk"><b>Riesgos:</b> no encontré datos actuales y confiables de ventas de finanzas en español. Además, hay saturación de libros hechos con IA. Se compensa con contenido técnico que revisás vos.</p>
+  </div>
+</article>
+
+<section class="panel" id="facturacion">
+  <h2>Cómo se factura (los 5 negocios)</h2>
+  <div class="grid2">
+    <div><h3>Ventas a consumidores</h3><p>Gumroad, Etsy y Amazon son el vendedor legal frente al comprador: le cobran, le dan el comprobante y pagan el impuesto de su país. No le facturás a cada cliente.</p></div>
+    <div><h3>Lo que facturás vos</h3><p>Le facturás a cada plataforma lo que te paga, con <b>Factura E</b> (exportación de servicios) desde un monotributo, que podés tener aunque seas empleado. A sponsors y afiliados, Factura E si son del exterior o C si son de Argentina.</p></div>
+    <div><h3>Cómo llega la plata</h3><ul><li>Etsy: siempre por Payoneer</li><li>Gumroad: transferencia o PayPal</li><li>Amazon: a tu cuenta (confirmar el método)</li></ul></div>
+    <div><h3>Confirmar con un contador antes de vender</h3><p>Las fuentes se contradicen en dos puntos: si lo que cobrás del exterior suma al tope del monotributo, y en qué plazo hay que ingresar y liquidar los dólares en el país. También hay que ver cómo se combina con tu sueldo en Ganancias.</p></div>
+  </div>
+</section>
+
+<section class="panel" id="marca">
+  <h2>Opciones de nombre</h2>
+  <p class="lede">Buscamos un nombre que funcione en español y en inglés, que sea corto, que transmita confianza y que no choque con fintechs conocidas. Tiene que servir de paraguas: Marca Tools, Marca Alerts, Marca Weekly. <b>Todavía no verifiqué los dominios:</b> la red de esta sesión bloquea la consulta.</p>
+  <div class="names">
+    <div class="name top"><strong>Calcuvest</strong><small>Top 1 · "calcular" + "invest"</small><p>Se entiende en los dos idiomas y describe lo que hacemos.</p></div>
+    <div class="name top"><strong>Yieldo</strong><small>Top 2 · "yield" con sonido latino</small><p>Tiene más personalidad; le queda bien al bot y a la newsletter.</p></div>
+    <div class="name top"><strong>Numlab</strong><small>Top 3 · neutra y técnica</small><p>Evita "Numeral", que ya es una fintech de pagos.</p></div>
+    <div class="name"><strong>Rindo</strong><small>Corto y fácil de recordar</small><p>En inglés no significa nada; probablemente haya que usar .app o .co.</p></div>
+    <div class="name"><strong>Tasa Clara / ClearRate</strong><small>Una marca por idioma</small><p>Son dos dominios y dos marcas que mantener.</p></div>
+    <div class="name"><strong>DealSheet</strong><small>Para las plantillas en inglés</small><p>Muy fuerte en inglés, pero no sirve como paraguas en español.</p></div>
+    <div class="name"><strong>Capitab</strong><small>"capital" + "tab" (pestaña de planilla)</small><p>Original, aunque un poco abstracto.</p></div>
+    <div class="name"><strong>Plata Clara</strong><small>Muy rioplatense</small><p>Solo funciona para Argentina y Uruguay.</p></div>
+  </div>
+</section>
+
+<section class="panel src" id="fuentes">
+  <h2 style="font-size:20px">Fuentes</h2>
+  <ul>
+    <li>Etsy: <a href="https://www.insightagent.app/guides/selling-digital-templates-etsy">plantillas</a> · <a href="https://www.insightagent.app/guides/how-much-do-etsy-sellers-make">ingresos de vendedores</a> · <a href="https://help.etsy.com/hc/articles/115015710408">países con Etsy Payments</a> · <a href="https://www.etsy.com/legal/etsy-payments/">términos (Payoneer en Argentina)</a></li>
+    <li>Gumroad: <a href="https://gumroad.com/help/article/13-getting-paid">cobros</a> · <a href="https://checkoutpage.com/blog/gumroad-fees">comisiones</a>. Lemon Squeezy: <a href="https://dodopayments.com/blogs/lemonsqueezy-review">review</a></li>
+    <li>Telegram: <a href="https://core.telegram.org/api/subscriptions">suscripciones con Stars</a> · <a href="https://dev.to/__747bb5a1521/i-built-a-paid-telegram-bot-heres-what-telegram-stars-actually-pay-3fo">cuánto pagan los Stars</a> · <a href="https://dolarapi.com">DolarApi</a> · <a href="https://www.rankia.com.ar/blog/dolar-hoy/filtrar/dolar-estadounidense-usd">Rankia (MEP/CCL)</a></li>
+    <li>SEO: <a href="https://hacecuentas.com/">hacecuentas.com</a> · <a href="https://ahrefs.com/websites/calcularsueldo.com.ar">Ahrefs calcularsueldo</a> · <a href="https://www.seodata.dev/keyword/how-to-calculate-dscr-ratio">búsquedas de DSCR</a> · <a href="https://ranktracker.com/blog/comparing-adsense-rpm-in-high-income-vs-low-income-regions">anuncios por región</a></li>
+    <li>Afiliados: <a href="https://ndcdyn.interactivebrokers.com/aces/Agreement/AgreementVersion/4841">IBKR</a> · <a href="https://affilimate.com/programs/dealcheck-affiliate-program/">DealCheck</a> · <a href="https://linkclicky.com/affiliate-program/stessa/">Stessa</a></li>
+    <li>Newsletter: <a href="https://dupple.com/learn/newsletter-advertising-cost-2026">tarifas de sponsors</a> · <a href="https://sendercircle.com/guides/finance-newsletter-advertising-rates">finanzas</a> · <a href="https://buttondown.com/features/paid-subscriptions">Buttondown</a></li>
+    <li>KDP: <a href="https://authorsguild.org/news/amazon-adds-to-kdp-generative-ai-policy-caps-daily-self-publishing-uploads/">límite de títulos y reglas de IA</a> · <a href="https://kdp.amazon.com/es_ES/earn">regalías</a></li>
+    <li>Monotributo: <a href="https://www.iprofesional.com/afip/309164-monotributo-que-impuestos-deben-pagar-los-exportadores-mas-chicos-y-como-no-perder-dolares">iProfesional</a> · <a href="https://contablix.ar/blog/monotributo-freelancers-digitales-instructores-2026">Contablix</a> · <a href="https://tributosimple.com/monotributistas-exportacion-servicios/">TributoSimple</a></li>
+  </ul>
+</section>
+</div>
