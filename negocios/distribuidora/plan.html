@@ -1,0 +1,138 @@
+<title>Plan Distribuidora Tandil</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: documento de trabajo de una columna, con fichas numéricas y tablas; acento color óxido por el rubro */
+:root{--bg:#f4f3f1;--paper:#fff;--ink:#1d2228;--muted:#5d6670;--line:#dcdad6;--accent:#b4501e;--soft:#f6e7dd;--ok:#1f7a4d;--oksoft:#e2f1e9;
+--fd:"Archivo","Helvetica Neue",Arial,sans-serif;--fb:"Source Sans 3",system-ui,"Segoe UI",sans-serif;--fm:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181c;--paper:#1d2227;--ink:#e8eaec;--muted:#9aa3ad;--line:#333a42;--accent:#f0935c;--soft:#3a271c;--ok:#62cf98;--oksoft:#17332a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181c;--paper:#1d2227;--ink:#e8eaec;--muted:#9aa3ad;--line:#333a42;--accent:#f0935c;--soft:#3a271c;--ok:#62cf98;--oksoft:#17332a;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--fb);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+h1,h2{font-family:var(--fd);margin:0;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,40px);font-weight:800}
+h2{font-size:22px;font-weight:700}
+h3{font:600 13px/1.2 var(--fb);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+p{margin:0;max-width:70ch}
+.eyebrow{font:500 12px/1 var(--fm);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);font-size:17px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:14px}
+ul,ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.grid>div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.r{text-align:right}.num{font-family:var(--fm);font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:600;background:var(--soft);border-bottom:none}
+.call{border-left:3px solid var(--accent);background:var(--soft);padding:12px 14px;border-radius:0 6px 6px 0}
+.ok{border-left:3px solid var(--ok);background:var(--oksoft);padding:12px 14px;border-radius:0 6px 6px 0}
+.tag{font:500 11px/1 var(--fm);background:var(--soft);color:var(--accent);padding:4px 8px;border-radius:999px;white-space:nowrap}
+</style>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:10px">
+  <span class="eyebrow">Plan de negocio · borrador v1</span>
+  <h1>Distribuidora de clavos y acero para Tandil y la zona</h1>
+  <p class="lede">Arrancar vendiendo sobre pedido, sin stock propio, usando los proveedores y los clientes de tu viejo. Si los números cierran en 90 días, sumar stock, productos y ciudades.</p>
+</header>
+
+<section>
+  <h2>1. La idea</h2>
+  <p>Comprar clavos, alambre y acero a buen precio y venderlos a corralones, ferreterías, herrerías, constructoras y campos de Tandil y alrededores.</p>
+  <div class="ok"><b>La ventaja no es el producto: es la red de tu viejo.</b> En este rubro lo difícil es que un proveedor te dé precio y plazo, y que un cliente te compre y te pague. Esas dos cosas ya están resueltas si él abre las puertas.</div>
+  <p>Todavía no conozco los precios reales de compra ni de venta. Los números de este plan son un ejemplo para mostrar el método: se reemplazan con los datos que me pases.</p>
+</section>
+
+<section>
+  <h2>2. Cómo funciona</h2>
+  <div class="grid">
+    <div><h3>Qué vendemos</h3><ul><li>Primero: clavos, alambre (recocido, galvanizado, de púas) y hierro de construcción</li><li>Después: mallas, perfiles, caños, chapas y tornillería</li></ul></div>
+    <div><h3>A quién</h3><ul><li>Corralones y ferreterías</li><li>Herrerías y metalúrgicas</li><li>Constructoras y obras</li><li>Productores rurales (alambrados)</li></ul></div>
+    <div><h3>Dónde</h3><ul><li>Tandil primero</li><li>Luego Azul, Olavarría, Balcarce, Rauch, Benito Juárez y Ayacucho</li></ul></div>
+  </div>
+  <h3>El modelo de arranque: vender antes de comprar</h3>
+  <ol>
+    <li>El proveedor pasa precio firme por lote, con flete hasta Tandil.</li>
+    <li>Armamos la lista de precios y se la ofrecemos a los clientes.</li>
+    <li>Juntamos pedidos hasta completar un lote.</li>
+    <li>Compramos solo lo vendido, entregamos y cobramos.</li>
+  </ol>
+  <p>Así no hay galpón ni mercadería parada, y el riesgo de la primera etapa es mínimo.</p>
+</section>
+
+<section>
+  <h2>3. Los números (ejemplo, a reemplazar con datos reales)</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Concepto</th><th class="r">Sobre una venta de 100</th><th>Comentario</th></tr></thead>
+    <tbody>
+      <tr><td>Precio de venta (sin IVA)</td><td class="r num">100,0</td><td>Tiene que quedar por debajo de lo que paga hoy el cliente</td></tr>
+      <tr><td>Costo de la mercadería</td><td class="r num">−78,0</td><td>El dato clave: el precio que consiga tu viejo</td></tr>
+      <tr><td>Flete hasta Tandil y reparto</td><td class="r num">−4,0</td><td>Pesa mucho en acero: cotizar por tonelada</td></tr>
+      <tr><td>Ingresos brutos y otros impuestos</td><td class="r num">−4,0</td><td>Confirmar la alícuota con el contador</td></tr>
+      <tr><td>Costo de financiar al cliente (45 días)</td><td class="r num">−4,0</td><td>Baja si el proveedor también da plazo</td></tr>
+      <tr><td>Incobrables y roturas</td><td class="r num">−1,0</td><td>Previsión</td></tr>
+      <tr><td>Comisión de venta</td><td class="r num">−3,0</td><td>Si vende un tercero</td></tr>
+      <tr class="tot"><td>Ganancia limpia</td><td class="r num">6,0</td><td>Antes de Ganancias</td></tr>
+    </tbody>
+  </table></div>
+  <div class="call"><b>Regla para avanzar:</b> que quede al menos 6–8 % limpio después de todos los costos, vendiendo 5–10 % más barato que la competencia. Con menos margen, cualquier atraso en un cobro se come la ganancia.</div>
+  <p>Con ese margen, vender el equivalente a <span class="num">USD 30.000</span> por mes deja unos <span class="num">USD 1.800–2.400</span>. El volumen es lo que hace el negocio: por eso importan tanto la lista de clientes y el plazo del proveedor.</p>
+</section>
+
+<section>
+  <h2>4. La plata que hace falta</h2>
+  <ul>
+    <li><b>Etapa de prueba:</b> casi nada si el proveedor da 30 días y cobramos al contado o a 15 días. Si pide pago anticipado, hace falta el valor del primer lote.</li>
+    <li><b>Regla de crédito del arranque:</b> nunca darle al cliente más plazo del que nos da el proveedor.</li>
+    <li><b>A quién se le fía:</b> solo a clientes que tu viejo conoce como buenos pagadores, con un tope por cliente. Al resto, contado o cheque.</li>
+    <li><b>Estructura:</b> al principio, fletes contratados y sin depósito. El galpón y el camión propio llegan cuando el volumen los pague.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>5. Plan por etapas</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Etapa</th><th>Qué se hace</th><th>Se pasa a la siguiente si…</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag">Semanas 1–2</span><br>Datos</td><td>Precios de 2–3 proveedores, precios que pagan hoy 10 clientes, flete, impuestos. Definir cómo se factura.</td><td>El margen limpio del ejemplo da 6 % o más</td></tr>
+      <tr><td><span class="tag">Semanas 3–6</span><br>Preventa</td><td>Lista de precios a 15–20 clientes. Juntar pedidos para un primer lote.</td><td>Hay pedidos firmes por un lote completo</td></tr>
+      <tr><td><span class="tag">Semanas 7–12</span><br>Primeros lotes</td><td>2–3 operaciones completas: comprar, entregar, cobrar. Medir margen real y días de cobro.</td><td>Margen real ≥ 6 % y cobranza sin atrasos graves</td></tr>
+      <tr><td><span class="tag">Meses 4–9</span><br>Rutina</td><td>Lote fijo cada 2–4 semanas, stock mínimo de lo que más rota, sumar ciudades vecinas y un vendedor a comisión.</td><td>Ventas mensuales estables y capital propio girando</td></tr>
+      <tr><td><span class="tag">Mes 10 en adelante</span><br>Escala</td><td>Más líneas de producto, depósito, compra directa a fábrica o importación, pedidos por WhatsApp y web.</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>6. Riesgos</h2>
+  <ul>
+    <li><b>Que el precio no sea tan bueno</b> una vez sumados flete e impuestos. Se sabe en la etapa de datos, antes de gastar.</li>
+    <li><b>Clientes que pagan tarde o no pagan.</b> Es el riesgo principal del rubro. Tope por cliente y crédito solo a conocidos.</li>
+    <li><b>Subas de precio</b> entre que cotizamos y compramos. Listas con vigencia corta (48–72 horas).</li>
+    <li><b>Competirle a tu viejo o a sus clientes.</b> Hay que definir con él si esto es una línea nueva de su negocio, una sociedad entre los dos o algo aparte. Es lo primero a conversar.</li>
+    <li><b>Tiempo.</b> Vender, entregar y cobrar lleva horas todas las semanas. Hay que definir quién lo hace.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>7. Quién hace qué</h2>
+  <div class="grid">
+    <div><h3>Yo me ocupo de</h3><ul><li>La planilla de márgenes con todos los costos</li><li>La lista de precios y su actualización</li><li>El mensaje de venta y el catálogo para WhatsApp</li><li>El listado de corralones, ferreterías y herrerías de cada ciudad</li><li>El control de pedidos, entregas y cobranzas</li><li>El flujo de caja y la regla de crédito por cliente</li></ul></div>
+    <div><h3>Vos y tu viejo</h3><ul><li>Conseguir los precios y el plazo de los proveedores</li><li>Hablar con los clientes y cerrar pedidos</li><li>Definir la figura legal con el contador</li><li>Coordinar el flete y las entregas</li><li>Cobrar</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>8. Lo que necesito para cerrar los números</h2>
+  <ol>
+    <li>¿A qué se dedica tu viejo y qué relación tiene con esos clientes y proveedores?</li>
+    <li>¿Él participa como socio, o solo te presenta gente?</li>
+    <li>Precio de compra de 3–5 productos concretos (por ejemplo, clavo punta París de 2", alambre recocido, hierro del 8) y qué plazo de pago da el proveedor.</li>
+    <li>Cuánto paga hoy un corralón de Tandil por esos mismos productos.</li>
+    <li>Costo del flete por tonelada hasta Tandil.</li>
+    <li>Cuánta plata hay disponible para el primer lote y quién va a salir a vender.</li>
+  </ol>
+</section>
+</div>
